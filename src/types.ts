@@ -1,4 +1,39 @@
 export type DayKey = 'mon' | 'tue' | 'wed' | 'thu' | 'fri' | 'sat' | 'sun'
+
+export interface DayWorkout {
+  key: DayKey
+  label: string
+  name: string
+  isRest: boolean
+  exercises: ExerciseDef[]
+}
+
+export interface MealDef {
+  id: string
+  time: string
+  name: string
+  description: string
+  kcal: number
+  protein: number
+  carbs: number
+  fat: number
+}
+
+export interface PhaseNutrition {
+  kcal: number
+  protein: number
+  carbs: number
+  fat: number
+  meals: MealDef[]
+}
+
+export interface SupplementDef {
+  id: string
+  name: string
+  dose: string
+  timing: string
+  important?: boolean
+}
 export type Phase = 'cut' | 'bulk'
 export type TabKey = 'today' | 'workout' | 'diet' | 'progress' | 'settings'
 

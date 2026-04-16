@@ -19,7 +19,7 @@ const DEFAULT_SETTINGS: AppSettings = {
   notificationsEnabled: false,
 }
 
-export const INITIAL_STATE: AppState = {
+const INITIAL_STATE: AppState = {
   userProfile: DEFAULT_PROFILE,
   sessions: [],
   waterLogs: [],

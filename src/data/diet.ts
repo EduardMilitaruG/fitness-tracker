@@ -1,29 +1,4 @@
-export interface MealDef {
-  id: string
-  time: string
-  name: string
-  description: string
-  kcal: number
-  protein: number
-  carbs: number
-  fat: number
-}
-
-export interface PhaseNutrition {
-  kcal: number
-  protein: number
-  carbs: number
-  fat: number
-  meals: MealDef[]
-}
-
-export interface SupplementDef {
-  id: string
-  name: string
-  dose: string
-  timing: string
-  important?: boolean
-}
+import type { MealDef, PhaseNutrition, SupplementDef } from '../types'
 
 export const CUT_PLAN: PhaseNutrition = {
   kcal: 2500,

@@ -15,7 +15,7 @@ export function isoToDate(iso: string): Date {
   return new Date(y, m - 1, d)
 }
 
-export function formatDate(iso: string): string {
+function formatDate(iso: string): string {
   const d = isoToDate(iso)
   return d.toLocaleDateString('en-GB', { weekday: 'short', month: 'short', day: 'numeric' })
 }
@@ -40,7 +40,7 @@ export function getWeekDates(referenceDate: Date = new Date()): Array<{ iso: str
   })
 }
 
-export function getMondayOfWeek(date: Date): string {
+function getMondayOfWeek(date: Date): string {
   const d = new Date(date)
   const day = d.getDay()
   const diff = day === 0 ? -6 : 1 - day

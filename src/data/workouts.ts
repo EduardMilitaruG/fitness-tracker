@@ -1,12 +1,4 @@
-import type { DayKey, ExerciseDef } from '../types'
-
-export interface DayWorkout {
-  key: DayKey
-  label: string
-  name: string
-  isRest: boolean
-  exercises: ExerciseDef[]
-}
+import type { DayKey, DayWorkout, ExerciseDef } from '../types'
 
 export const WEEKLY_SPLIT: Record<DayKey, DayWorkout> = {
   mon: {

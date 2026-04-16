@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evento Pasión Española y Corazón Rumano</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f3f4f6;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .a4-page {
+            width: 210mm;
+            height: 297mm;
+            background: linear-gradient(135deg, #0047AB 0%, #001A4D 100%);
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        .a4-page::before,
+        .a4-page::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-repeat: no-repeat;
+            opacity: 0.45;
+            filter: grayscale(15%) contrast(1.05);
+            pointer-events: none;
+            z-index: 0;
+        }
+        .a4-page::before {
+            background-image:
+                linear-gradient(90deg, rgba(0, 26, 77, 0.85) 20%, rgba(0, 26, 77, 0.35) 55%, rgba(0, 26, 77, 0.85) 100%),
+                url("https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1200&q=80");
+            background-position: left center;
+        }
+        .a4-page::after {
+            background-image:
+                linear-gradient(90deg, rgba(0, 26, 77, 0.85) 0%, rgba(0, 26, 77, 0.35) 45%, rgba(0, 26, 77, 0.85) 80%),
+                url("https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=1200&q=80");
+            background-position: right center;
+            mix-blend-mode: screen;
+        }
+        .a4-page > * {
+            position: relative;
+            z-index: 1;
+        }
+        .header-bg {
+            background: linear-gradient(90deg, #AA151B 0%, #F1BF00 30%, #F1BF00 40%, #002B7F 60%, #FCD116 80%, #CE1126 100%);
+            height: 15px;
+            width: 100%;
+        }
+        .title-font {
+            font-family: 'Playfair Display', serif;
+        }
+        .ribbon {
+            background: #AA151B;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            font-weight: bold;
+            letter-spacing: 2px;
+            transform: rotate(-2deg);
+            width: 105%;
+            margin-left: -2.5%;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .menu-card {
+            border: 4px solid #F1BF00;
+            border-radius: 15px;
+            padding: 20px;
+            background: #FFFDF0;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+        }
+        .price-tag {
+            background: #CE1126;
+            color: white;
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            transform: rotate(15deg);
+            border: 3px dashed #F1BF00;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+            z-index: 10;
+            outline: none;
+            overflow: hidden;
+            -webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%);
+            clip-path: circle(50% at 50% 50%);
+        }
+        .artist-img-wrapper {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid #F1BF00;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            flex-shrink: 0;
+            -webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%);
+            clip-path: circle(50% at 50% 50%);
+        }
+        .artist-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            border-radius: 0;
+        }
+        .section-title {
+            color: #AA151B;
+            border-bottom: 2px solid #F1BF00;
+            display: inline-block;
+            margin-bottom: 15px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="a4-page">
+        <!-- Banderas decorativas arriba -->
+        <div class="header-bg"></div>
+
+        <!-- Precio Flotante -->
+        <div class="price-tag">
+            <span class="text-lg mt-2">Solo</span>
+            <span class="text-5xl font-bold my-1">38€</span>
+            <span class="text-sm text-center leading-tight mb-2">por<br>persona</span>
+        </div>
+
+        <!-- Encabezado Principal -->
+        <header class="text-center mt-20 px-10">
+            <h2 class="text-xl text-yellow-300 uppercase tracking-widest mb-2 font-bold">Restaurante Casa Angel presenta:</h2>
+            <h1 class="title-font text-5xl text-white mb-4 drop-shadow-lg">PASIÓN ESPAÑOLA Y CORAZÓN RUMANO</h1>
+            <div class="ribbon text-2xl uppercase">Cena Inolvidable con Música en Vivo</div>
+        </header>
+
+        <!-- Información de Fecha y Artista -->
+        <div class="flex justify-between items-center px-16 my-8">
+            <div class="w-1/2">
+                <div class="bg-white p-4 rounded-lg border-l-8 border-yellow-500 shadow-md">
+                    <p class="text-lg font-bold text-gray-800">VIERNES 17.04.2026</p>
+                    <p class="text-gray-600">A partir de las <span class="font-bold">20:00 Horas</span></p>
+                </div>
+                <div class="mt-6">
+                    <h3 class="text-3xl font-bold text-white drop-shadow-md">SANDU IVASCU</h3>
+                    <p class="text-yellow-400 font-bold text-lg">Famoso Cantante Invitado</p>
+                    <p class="text-sm text-gray-200 mt-2">Repertorio: Música Rumana, Española e Internacional</p>
+                </div>
+            </div>
+            <div class="w-1/2 flex justify-center">
+                <div class="artist-img-wrapper">
+                    <img src="./cantante.png" alt="Cantante" class="artist-img">
+                </div>
+            </div>
+        </div>
+
+        <!-- Menú -->
+        <main class="px-16 flex-grow">
+            <div class="menu-card">
+                <h3 class="text-center text-3xl title-font mb-6 text-gray-800 italic underline">MENÚ ESPECIAL</h3>
+                
+                <div class="grid grid-cols-2 gap-8">
+                    <!-- Entrantes -->
+                    <div>
+                        <span class="section-title">Entrantes para compartir</span>
+                        <ul class="space-y-2 text-gray-700">
+                            <li>• Ensalada de tomate con queso, cebolla y olivas</li>
+                            <li>• Higaditos de pollo con polenta</li>
+                            <li>• Puntillas fritas</li>
+                        </ul>
+                    </div>
+
+                    <!-- Segundos -->
+                    <div>
+                        <span class="section-title">Segundos a elegir</span>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="font-bold">1. Aguja al horno</li>
+                            <li class="text-sm italic ml-4">con patatas al pobre y encurtidos</li>
+                            <li class="text-center font-bold my-1 text-red-600">O</li>
+                            <li class="font-bold">2. Merluza a la "Casa Angel"</li>
+                            <li class="text-sm italic ml-4">con verduras</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Incluye -->
+                <div class="mt-8 pt-6 border-t border-dashed border-gray-300 grid grid-cols-4 gap-4 text-center">
+                    <div>
+                        <p class="font-bold text-gray-800">Postre</p>
+                        <p class="text-sm text-gray-600">Tiramisú</p>
+                    </div>
+                    <div>
+                        <p class="font-bold text-gray-800">Bebida</p>
+                        <p class="text-sm text-gray-600">1ª Bebida incl.</p>
+                    </div>
+                    <div>
+                        <p class="font-bold text-gray-800">Complemento</p>
+                        <p class="text-sm text-gray-600">Pan</p>
+                    </div>
+                    <div>
+                        <p class="font-bold text-gray-800">Final</p>
+                        <p class="text-sm text-gray-600">Café</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Pie de página / Reservas -->
+        <footer class="bg-gray-900 text-white p-8 mt-6">
+            <div class="flex justify-around items-center">
+                <div class="text-center">
+                    <p class="text-yellow-400 font-bold tracking-widest uppercase">Reservas</p>
+                    <p class="text-3xl font-bold mt-1">642 959 228</p>
+                </div>
+                <div class="h-12 w-px bg-gray-700"></div>
+                <div class="text-center">
+                    <p class="text-yellow-400 font-bold tracking-widest uppercase">Ubicación</p>
+                    <p class="text-xl">Poligono fadrell industrial, Nave 49</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+</body>
+</html>
