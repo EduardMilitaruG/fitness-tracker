@@ -192,7 +192,6 @@ export default function SettingsScreen() {
       {/* About */}
       <div className="text-center py-3">
         <p className="text-xs text-gray-600">My Physique · v1.0.0</p>
-        <p className="text-xs text-gray-700 mt-0.5">Built with Claude Code</p>
       </div>
     </div>
   )
